@@ -7,9 +7,9 @@ html
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
 		link(rel='shortcut icon', href='img/favicon.ico', type='image/x-icon')
-		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto:400,700,900")
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900")
 		link(rel='stylesheet', href='css/style.css')
-		script(src="https://use.fontawesome.com/dc4e9e0727.js")
+		script(src="https://kit.fontawesome.com/1f70c8680e.js", crossorigin="anonymous")
 		style.
 			*,
 			*::after,
@@ -20,51 +20,88 @@ html
 
 	body
 		.w-page
-			.quiz
+			.quiz.answering
 				table.quiz__wrapper
 					tr
 						td.quiz__container
 							.quiz__inner
+								.quiz__progress
+									sapn.quiz__progress-bar.js-progress-bar #[span.js-progress-count 25]%
+								button.quiz__back
 								button.quiz__close
-								.quiz__main
-								.quiz__head
-									img.quiz__logo(src="img/logo.png", alt="")
-									p.quiz__logoSign Стоматология #[br]в Москве
-									a(href="tel:+7 (495) 241 00 36").quiz__phone +7 (495) 241 00 36
-								.quiz__tail
-									p.quiz__title Узнайте предварительную 
-										span цену на #[b стоматологические услуги] 
-										span пройдя короткий тест за 20 сек 
-									p.quiz__text Мы предоставим вам предварительный расчет стоимости и варианты лечения на основе ваших ответов. Также вы получите возможность рассрочки. Нас выбрали уже тысячи пациентов
-									button.quiz__start Рассчитать цену онлайн
-									button.quiz__callback Записаться на прием
-									p.quiz__counter Сегодня тестов пройдено: 27
-								.quiz__list
-									p.quiz__choiseText #[b Выберите услугу], на которую хотите рассчитать стоимость
-									button.quiz__item
-										i(style="background-image: url(img/quiz-item-pic-1.jpg)")
-										span(style="background-image: url(img/quiz-item-icon-1.png)") Имплантация
-									button.quiz__item
-										i(style="background-image: url(img/quiz-item-pic-1.jpg)")
-										span(style="background-image: url(img/quiz-item-icon-1.png)") Имплантация
-									button.quiz__item
-										i(style="background-image: url(img/quiz-item-pic-1.jpg)")
-										span(style="background-image: url(img/quiz-item-icon-1.png)") Имплантация
-									button.quiz__item
-										i(style="background-image: url(img/quiz-item-pic-1.jpg)")
-										span(style="background-image: url(img/quiz-item-icon-1.png)") Имплантация
-									button.quiz__item
-										i(style="background-image: url(img/quiz-item-pic-1.jpg)")
-										span(style="background-image: url(img/quiz-item-icon-1.png)") Имплантация
-									button.quiz__item
-										i(style="background-image: url(img/quiz-item-pic-1.jpg)")
-										span(style="background-image: url(img/quiz-item-icon-1.png)") Имплантация
-									button.quiz__item
-										i(style="background-image: url(img/quiz-item-pic-1.jpg)")
-										span(style="background-image: url(img/quiz-item-icon-1.png)") Имплантация
-									button.quiz__item
-										i(style="background-image: url(img/quiz-item-pic-1.jpg)")
-										span(style="background-image: url(img/quiz-item-icon-1.png)") Имплантация
+								svg.loader
+									circle.loader__circle1(r='48%', cx='50%', cy='50%')
+									circle.loader__circle2(r='40%', cx='50%', cy='50%')
+									circle.loader__circle3(r='32%', cx='50%', cy='50%')
+								p.quiz__reason #[b Расчет цены] Пройдите короткий тест  и рассчитайте#[br] стоимость лечения
+								.quiz__main(style="display:none")
+									.quiz__head
+										img.quiz__logo(src="img/logo.png", alt="")
+										p.quiz__logoSign Стоматология #[br]в Москве
+										a(href="tel:+7 (495) 241 00 36").quiz__phone +7 (495) 241 00 36
+									.quiz__tail
+										p.quiz__title Узнайте предварительную 
+											span цену на #[b стоматологические услуги] 
+											span пройдя короткий тест за 20 сек 
+										p.quiz__text Мы предоставим вам предварительный расчет стоимости и варианты лечения на основе ваших ответов. Также вы получите возможность рассрочки. Нас выбрали уже тысячи пациентов
+										button.quiz__start.quiz__btn Рассчитать цену онлайн
+										button.quiz__callback Записаться на прием
+										p.quiz__counter Сегодня тестов пройдено: 27
+									.quiz__list
+										p.quiz__choiseText #[b Выберите услугу], на которую хотите рассчитать стоимость
+										button.quiz__item
+											i(style="background-image: url(img/quiz-item-pic-1.jpg)")
+											span(style="background-image: url(img/quiz-item-icon-1.png)") Имплантация
+										button.quiz__item
+											i(style="background-image: url(img/quiz-item-pic-1.jpg)")
+											span(style="background-image: url(img/quiz-item-icon-1.png)") Имплантация
+										button.quiz__item
+											i(style="background-image: url(img/quiz-item-pic-1.jpg)")
+											span(style="background-image: url(img/quiz-item-icon-1.png)") Имплантация
+										button.quiz__item
+											i(style="background-image: url(img/quiz-item-pic-1.jpg)")
+											span(style="background-image: url(img/quiz-item-icon-1.png)") Имплантация
+										button.quiz__item
+											i(style="background-image: url(img/quiz-item-pic-1.jpg)")
+											span(style="background-image: url(img/quiz-item-icon-1.png)") Имплантация
+										button.quiz__item
+											i(style="background-image: url(img/quiz-item-pic-1.jpg)")
+											span(style="background-image: url(img/quiz-item-icon-1.png)") Имплантация
+										button.quiz__item
+											i(style="background-image: url(img/quiz-item-pic-1.jpg)")
+											span(style="background-image: url(img/quiz-item-icon-1.png)") Имплантация
+										button.quiz__item
+											i(style="background-image: url(img/quiz-item-pic-1.jpg)")
+											span(style="background-image: url(img/quiz-item-icon-1.png)") Имплантация
+								.quiz__questions(style="display:none")
+									.quiz__question.error
+										p.quiz__question-caption #[b Какая у Вас ситуация?]
+										.quiz__question-answers
+											p.quiz__question-answer.quiz__question-answer--has-image.selected #[i(style="background-image: url(../img/quiz-item-pic-1.jpg)")] #[b Есть отсутствующий зуб/зубы] #[span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, suscipit!]
+											p.quiz__question-answer.quiz__question-answer--has-image #[i(style="background-image: url(../img/quiz-item-pic-1.jpg)")] #[b Зуб расшатывается (приобрел подвижность)] #[span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, sint.]
+											p.quiz__question-answer.quiz__question-answer--has-image #[i(style="background-image: url(../img/quiz-item-pic-1.jpg)")] #[b Уже ставил коронку/коронки, хочу заменить] #[span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, tenetur.]
+											p.quiz__question-answer.quiz__question-answer--has-image #[i(style="background-image: url(../img/quiz-item-pic-1.jpg)")] #[b Сейчас съёмный протез, хочется коронки] #[span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, nam.]
+											p.quiz__question-answer.quiz__question-answer--has-image #[i(style="background-image: url(../img/quiz-item-pic-1.jpg)")] #[b Есть имплант, нужна коронка] #[span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, eum!]
+											p.quiz__question-answer.quiz__question-answer--has-image(data-cancel-answers) #[i(style="background-image: url(../img/quiz-item-pic-1.jpg)")] #[b Другое] #[span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, itaque.]
+										p.quiz__question-error Пожалуйста, выберите один из вариантов
+										button.quiz__next.quiz__btn.js-next Далее
+								.quiz__form(style="display:none")
+									p.quiz__form-title Почти готово! Расчет уже готовят наши врачи. #[br]Впишите свой телефон, на который направить его.
+									.quiz__form-inner
+										.quiz__form-field
+											input(type='tel', name='your-phone', value='', size='40', aria-required='true', aria-invalid='false')
+										button.quiz__next.quiz__btn.js-sendquiz Отправить
+								.quiz__finish
+									p.quiz__finish-title Спасибо за заявку!
+									p.quiz__finish-text Мы уже готовим для вас расчет. В ближайшее время #[br]с вами свяжется администратор и сообщит варианты цен и рекомендации для вашего случая
+									p.quiz__finish-text Почему пациенты выбирают нашу клинику:
+									.quiz__finish-panel
+										p #[b 1. ]Врачи. Тысячи пациентов выбрали именно наших врачей
+										p #[b 1. ]Соответствие действующим клиническим стандартам и рекомендациям. Мы несем полную ответственность за результаты лечения. Обязательства клиники зафиксированы в документах (официальный договор)
+										p #[b 1. ]Официальная лицензия выдана Министерством здравоохранения
+										p #[b 1. ]Тщательная стерилизация инструментов
+										p #[b 1. ]Мы выдаем все официальные документы, договора. У нас официальная бухгалтерия. Вы сможете получить налоговый вычет. Это дополнительная выгода для вас 13%
+								p.quiz__disclamer Имеются противопоказания, необходима консультация специалиста. #[br]Предложение не является публичной офертой
 
 
 		script(src="js/lightslider.min.js")

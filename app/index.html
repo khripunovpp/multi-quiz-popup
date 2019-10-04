@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700,900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://use.fontawesome.com/dc4e9e0727.js"></script>
+    <script src="https://kit.fontawesome.com/1f70c8680e.js" crossorigin="anonymous"></script>
     <style>
       *,
       *::after,
@@ -20,34 +20,82 @@
   </head>
   <body>
     <div class="w-page">
-      <div class="quiz">
+      <div class="quiz answering">
         <table class="quiz__wrapper">
           <tr>
             <td class="quiz__container">
               <div class="quiz__inner">
+                <div class="quiz__progress">
+                  <sapn class="quiz__progress-bar js-progress-bar"><span class="js-progress-count">25</span>%</sapn>
+                </div>
+                <button class="quiz__back"></button>
                 <button class="quiz__close"></button>
-                <div class="quiz__main"></div>
-                <div class="quiz__head"><img class="quiz__logo" src="img/logo.png" alt="">
-                  <p class="quiz__logoSign">Стоматология <br>в Москве</p><a class="quiz__phone" href="tel:+7 (495) 241 00 36">+7 (495) 241 00 36</a>
+                <svg class="loader">
+                  <circle class="loader__circle1" r="48%" cx="50%" cy="50%"></circle>
+                  <circle class="loader__circle2" r="40%" cx="50%" cy="50%"></circle>
+                  <circle class="loader__circle3" r="32%" cx="50%" cy="50%"></circle>
+                </svg>
+                <p class="quiz__reason"><b>Расчет цены</b> Пройдите короткий тест  и рассчитайте<br> стоимость лечения</p>
+                <div class="quiz__main" style="display:none">
+                  <div class="quiz__head"><img class="quiz__logo" src="img/logo.png" alt="">
+                    <p class="quiz__logoSign">Стоматология <br>в Москве</p><a class="quiz__phone" href="tel:+7 (495) 241 00 36">+7 (495) 241 00 36</a>
+                  </div>
+                  <div class="quiz__tail">
+                    <p class="quiz__title">Узнайте предварительную <span>цену на <b>стоматологические услуги</b> </span><span>пройдя короткий тест за 20 сек </span></p>
+                    <p class="quiz__text">Мы предоставим вам предварительный расчет стоимости и варианты лечения на основе ваших ответов. Также вы получите возможность рассрочки. Нас выбрали уже тысячи пациентов</p>
+                    <button class="quiz__start quiz__btn">Рассчитать цену онлайн</button>
+                    <button class="quiz__callback">Записаться на прием</button>
+                    <p class="quiz__counter">Сегодня тестов пройдено: 27</p>
+                  </div>
+                  <div class="quiz__list">
+                    <p class="quiz__choiseText"><b>Выберите услугу</b>, на которую хотите рассчитать стоимость</p>
+                    <button class="quiz__item"><i style="background-image: url(img/quiz-item-pic-1.jpg)"></i><span style="background-image: url(img/quiz-item-icon-1.png)">Имплантация</span></button>
+                    <button class="quiz__item"><i style="background-image: url(img/quiz-item-pic-1.jpg)"></i><span style="background-image: url(img/quiz-item-icon-1.png)">Имплантация</span></button>
+                    <button class="quiz__item"><i style="background-image: url(img/quiz-item-pic-1.jpg)"></i><span style="background-image: url(img/quiz-item-icon-1.png)">Имплантация</span></button>
+                    <button class="quiz__item"><i style="background-image: url(img/quiz-item-pic-1.jpg)"></i><span style="background-image: url(img/quiz-item-icon-1.png)">Имплантация</span></button>
+                    <button class="quiz__item"><i style="background-image: url(img/quiz-item-pic-1.jpg)"></i><span style="background-image: url(img/quiz-item-icon-1.png)">Имплантация</span></button>
+                    <button class="quiz__item"><i style="background-image: url(img/quiz-item-pic-1.jpg)"></i><span style="background-image: url(img/quiz-item-icon-1.png)">Имплантация</span></button>
+                    <button class="quiz__item"><i style="background-image: url(img/quiz-item-pic-1.jpg)"></i><span style="background-image: url(img/quiz-item-icon-1.png)">Имплантация</span></button>
+                    <button class="quiz__item"><i style="background-image: url(img/quiz-item-pic-1.jpg)"></i><span style="background-image: url(img/quiz-item-icon-1.png)">Имплантация</span></button>
+                  </div>
                 </div>
-                <div class="quiz__tail">
-                  <p class="quiz__title">Узнайте предварительную <span>цену на <b>стоматологические услуги</b> </span><span>пройдя короткий тест за 20 сек </span></p>
-                  <p class="quiz__text">Мы предоставим вам предварительный расчет стоимости и варианты лечения на основе ваших ответов. Также вы получите возможность рассрочки. Нас выбрали уже тысячи пациентов</p>
-                  <button class="quiz__start">Рассчитать цену онлайн</button>
-                  <button class="quiz__callback">Записаться на прием</button>
-                  <p class="quiz__counter">Сегодня тестов пройдено: 27</p>
+                <div class="quiz__questions" style="display:none">
+                  <div class="quiz__question error">
+                    <p class="quiz__question-caption"><b>Какая у Вас ситуация?</b></p>
+                    <div class="quiz__question-answers">
+                      <p class="quiz__question-answer quiz__question-answer--has-image selected"><i style="background-image: url(../img/quiz-item-pic-1.jpg)"></i> <b>Есть отсутствующий зуб/зубы</b> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, suscipit!</span></p>
+                      <p class="quiz__question-answer quiz__question-answer--has-image"><i style="background-image: url(../img/quiz-item-pic-1.jpg)"></i> <b>Зуб расшатывается (приобрел подвижность)</b> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, sint.</span></p>
+                      <p class="quiz__question-answer quiz__question-answer--has-image"><i style="background-image: url(../img/quiz-item-pic-1.jpg)"></i> <b>Уже ставил коронку/коронки, хочу заменить</b> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, tenetur.</span></p>
+                      <p class="quiz__question-answer quiz__question-answer--has-image"><i style="background-image: url(../img/quiz-item-pic-1.jpg)"></i> <b>Сейчас съёмный протез, хочется коронки</b> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, nam.</span></p>
+                      <p class="quiz__question-answer quiz__question-answer--has-image"><i style="background-image: url(../img/quiz-item-pic-1.jpg)"></i> <b>Есть имплант, нужна коронка</b> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, eum!</span></p>
+                      <p class="quiz__question-answer quiz__question-answer--has-image" data-cancel-answers><i style="background-image: url(../img/quiz-item-pic-1.jpg)"></i> <b>Другое</b> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, itaque.</span></p>
+                    </div>
+                    <p class="quiz__question-error">Пожалуйста, выберите один из вариантов</p>
+                    <button class="quiz__next quiz__btn js-next">Далее</button>
+                  </div>
                 </div>
-                <div class="quiz__list">
-                  <p class="quiz__choiseText"><b>Выберите услугу</b>, на которую хотите рассчитать стоимость</p>
-                  <button class="quiz__item"><i style="background-image: url(img/quiz-item-pic-1.jpg)"></i><span style="background-image: url(img/quiz-item-icon-1.png)">Имплантация</span></button>
-                  <button class="quiz__item"><i style="background-image: url(img/quiz-item-pic-1.jpg)"></i><span style="background-image: url(img/quiz-item-icon-1.png)">Имплантация</span></button>
-                  <button class="quiz__item"><i style="background-image: url(img/quiz-item-pic-1.jpg)"></i><span style="background-image: url(img/quiz-item-icon-1.png)">Имплантация</span></button>
-                  <button class="quiz__item"><i style="background-image: url(img/quiz-item-pic-1.jpg)"></i><span style="background-image: url(img/quiz-item-icon-1.png)">Имплантация</span></button>
-                  <button class="quiz__item"><i style="background-image: url(img/quiz-item-pic-1.jpg)"></i><span style="background-image: url(img/quiz-item-icon-1.png)">Имплантация</span></button>
-                  <button class="quiz__item"><i style="background-image: url(img/quiz-item-pic-1.jpg)"></i><span style="background-image: url(img/quiz-item-icon-1.png)">Имплантация</span></button>
-                  <button class="quiz__item"><i style="background-image: url(img/quiz-item-pic-1.jpg)"></i><span style="background-image: url(img/quiz-item-icon-1.png)">Имплантация</span></button>
-                  <button class="quiz__item"><i style="background-image: url(img/quiz-item-pic-1.jpg)"></i><span style="background-image: url(img/quiz-item-icon-1.png)">Имплантация</span></button>
+                <div class="quiz__form" style="display:none">
+                  <p class="quiz__form-title">Почти готово! Расчет уже готовят наши врачи. <br>Впишите свой телефон, на который направить его.</p>
+                  <div class="quiz__form-inner">
+                    <div class="quiz__form-field">
+                      <input type="tel" name="your-phone" value="" size="40" aria-required="true" aria-invalid="false">
+                    </div>
+                    <button class="quiz__next quiz__btn js-sendquiz">Отправить</button>
+                  </div>
                 </div>
+                <div class="quiz__finish">
+                  <p class="quiz__finish-title">Спасибо за заявку!</p>
+                  <p class="quiz__finish-text">Мы уже готовим для вас расчет. В ближайшее время <br>с вами свяжется администратор и сообщит варианты цен и рекомендации для вашего случая</p>
+                  <p class="quiz__finish-text">Почему пациенты выбирают нашу клинику:</p>
+                  <div class="quiz__finish-panel">
+                    <p><b>1. </b>Врачи. Тысячи пациентов выбрали именно наших врачей</p>
+                    <p><b>1. </b>Соответствие действующим клиническим стандартам и рекомендациям. Мы несем полную ответственность за результаты лечения. Обязательства клиники зафиксированы в документах (официальный договор)</p>
+                    <p><b>1. </b>Официальная лицензия выдана Министерством здравоохранения</p>
+                    <p><b>1. </b>Тщательная стерилизация инструментов</p>
+                    <p><b>1. </b>Мы выдаем все официальные документы, договора. У нас официальная бухгалтерия. Вы сможете получить налоговый вычет. Это дополнительная выгода для вас 13%</p>
+                  </div>
+                </div>
+                <p class="quiz__disclamer">Имеются противопоказания, необходима консультация специалиста. <br>Предложение не является публичной офертой</p>
               </div>
             </td>
           </tr>
