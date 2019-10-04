@@ -77,6 +77,10 @@ select
 	overflow: auto
 	background-color: #fafafa
 	line-height: 1
+	display: none
+	&.loading
+		.quiz__loader
+			display: block
 	&.answering
 		.quiz__progress
 			opacity: 1
@@ -98,6 +102,20 @@ select
 		margin: 0 auto
 		padding: 60px
 		position: relative
+	&__loader
+		position: fixed
+		z-index: 2
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		display: none
+		background-color: #fff
+		.loader
+			position: absolute
+			left: 50%
+			top: 50%
+			transform: translate(-50%,-50%)
 	&__head
 		display: -webkit-flex
 		display: -moz-flex
@@ -362,14 +380,21 @@ select
 			font-size: 18px
 		i
 			display: none
-	&__question
-		color: #151515
+	&__questions
 		max-width: 1200px
 		margin: 0 auto
 		&.error
 			.quiz__question-caption
 				animation: error 0.4s 1 linear
 				color: #e4273a
+			.quiz__question-error
+				display: block
+				animation: error 0.4s 1 linear
+	&__question
+		color: #151515
+		display: none
+		&.active
+			display: block
 		&-answers
 			display: -webkit-flex
 			display: -moz-flex
@@ -454,6 +479,7 @@ select
 			font-weight: 500
 			font-size: 16px
 			margin: 0
+			display: none
 	&__form
 		&-title
 			font-size: 45px
@@ -516,7 +542,6 @@ select
 .loader
 	width: 100px
 	height: 100px
-	display: none
 	
 .loader__circle1,
 .loader__circle2,

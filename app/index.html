@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900">
+    <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/1f70c8680e.js" crossorigin="anonymous"></script>
     <style>
@@ -30,11 +31,13 @@
                 </div>
                 <button class="quiz__back"></button>
                 <button class="quiz__close"></button>
-                <svg class="loader">
-                  <circle class="loader__circle1" r="48%" cx="50%" cy="50%"></circle>
-                  <circle class="loader__circle2" r="40%" cx="50%" cy="50%"></circle>
-                  <circle class="loader__circle3" r="32%" cx="50%" cy="50%"></circle>
-                </svg>
+                <div class="quiz__loader">
+                  <svg class="loader">
+                    <circle class="loader__circle1" r="48%" cx="50%" cy="50%"></circle>
+                    <circle class="loader__circle2" r="40%" cx="50%" cy="50%"></circle>
+                    <circle class="loader__circle3" r="32%" cx="50%" cy="50%"></circle>
+                  </svg>
+                </div>
                 <p class="quiz__reason"><b>Расчет цены</b> <span>Пройдите короткий тест  и рассчитайте<br> стоимость лечения</span> <i>Пройдите тест и узнайте цену</i></p>
                 <div class="quiz__main">
                   <div class="quiz__head"><img class="quiz__logo" src="img/logo.png" alt="">
@@ -49,7 +52,7 @@
                   </div>
                   <div class="quiz__list">
                     <p class="quiz__choiseText"><b>Выберите услугу</b>, на которую хотите рассчитать стоимость</p>
-                    <button class="quiz__item"><i style="background-image: url(img/quiz-item-pic-1.jpg)"></i><span style="background-image: url(img/quiz-item-icon-1.png)">Имплантация</span></button>
+                    <button class="quiz__item" data-settings="{&quot;name&quot;:&quot;Имплантация&quot;,&quot;data&quot;:{&quot;poster&quot;:&quot;poster&quot;,&quot;icon&quot;:&quot;icon&quot;,&quot;questions&quot;:[{&quot;caption&quot;:&quot;Какая у Вас ситуация?&quot;,&quot;multi&quot;:true,&quot;cost&quot;:2,&quot;answers&quot;:[{&quot;value&quot;:&quot;Есть отсутствующий зуб/зубы&quot;,&quot;description&quot;:&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, itaque.&quot;,&quot;image&quot;:&quot;&quot;,&quot;reset&quot;:false},{&quot;value&quot;:&quot;Зуб расшатывается (приобрел подвижность)&quot;,&quot;description&quot;:&quot;Lorem ipsum dolor sit am itaque.&quot;,&quot;image&quot;:&quot;&quot;,&quot;reset&quot;:false},{&quot;value&quot;:&quot;Уже ставил коронку/коронки, хочу заменить&quot;,&quot;description&quot;:&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, itaque.&quot;,&quot;image&quot;:&quot;&quot;,&quot;reset&quot;:false},{&quot;value&quot;:&quot;Сейчас съёмный протез, хочется коронки&quot;,&quot;description&quot;:&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, itaque.&quot;,&quot;image&quot;:&quot;&quot;,&quot;reset&quot;:false},{&quot;value&quot;:&quot;Есть имплант, нужна коронка&quot;,&quot;description&quot;:&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, itaque.&quot;,&quot;image&quot;:&quot;&quot;,&quot;reset&quot;:false},{&quot;value&quot;:&quot;Другое&quot;,&quot;description&quot;:&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, itaque.&quot;,&quot;image&quot;:&quot;&quot;,&quot;reset&quot;:false}]},{&quot;caption&quot;:&quot;Какаяf у Вас ситуация?&quot;,&quot;multi&quot;:true,&quot;cost&quot;:2,&quot;answers&quot;:[{&quot;value&quot;:&quot;Есть отсутствующий зуб/зубы&quot;,&quot;description&quot;:&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, itaque.&quot;,&quot;image&quot;:&quot;&quot;,&quot;reset&quot;:false},{&quot;value&quot;:&quot;Зуб расшатывается (приобрел подвижность)&quot;,&quot;description&quot;:&quot;Lorem ipsum dolor sit am itaque.&quot;,&quot;image&quot;:&quot;&quot;,&quot;reset&quot;:false},{&quot;value&quot;:&quot;Уже ставил коронку/коронки, хочу заменить&quot;,&quot;description&quot;:&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, itaque.&quot;,&quot;image&quot;:&quot;&quot;,&quot;reset&quot;:false},{&quot;value&quot;:&quot;Сейчас съёмный протез, хочется коронки&quot;,&quot;description&quot;:&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, itaque.&quot;,&quot;image&quot;:&quot;../img/quiz-item-pic-1.jpg&quot;,&quot;reset&quot;:false},{&quot;value&quot;:&quot;Есть имплант, нужна коронка&quot;,&quot;description&quot;:&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, itaque.&quot;,&quot;image&quot;:&quot;../img/quiz-item-pic-1.jpg&quot;,&quot;reset&quot;:false},{&quot;value&quot;:&quot;Другое&quot;,&quot;description&quot;:&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, itaque.&quot;,&quot;image&quot;:&quot;&quot;,&quot;reset&quot;:true}]}]}}"><i style="background-image: url(img/quiz-item-pic-1.jpg)"></i><span style="background-image: url(img/quiz-item-icon-1.png)">Имплантация</span></button>
                     <button class="quiz__item"><i style="background-image: url(img/quiz-item-pic-1.jpg)"></i><span style="background-image: url(img/quiz-item-icon-1.png)">Имплантация</span></button>
                     <button class="quiz__item"><i style="background-image: url(img/quiz-item-pic-1.jpg)"></i><span style="background-image: url(img/quiz-item-icon-1.png)">Имплантация</span></button>
                     <button class="quiz__item"><i style="background-image: url(img/quiz-item-pic-1.jpg)"></i><span style="background-image: url(img/quiz-item-icon-1.png)">Имплантация</span></button>
@@ -60,19 +63,9 @@
                   </div>
                 </div>
                 <div class="quiz__questions" style="display:none">
-                  <div class="quiz__question error">
-                    <p class="quiz__question-caption"><b>Какая у Вас ситуация?</b></p>
-                    <div class="quiz__question-answers">
-                      <p class="quiz__question-answer quiz__question-answer--has-image"><i style="background-image: url(../img/quiz-item-pic-1.jpg)"></i> <b>Есть отсутствующий зуб/зубы</b> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, suscipit!</span></p>
-                      <p class="quiz__question-answer quiz__question-answer--has-image"><i style="background-image: url(../img/quiz-item-pic-1.jpg)"></i> <b>Зуб расшатывается (приобрел подвижность)</b> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, sint.</span></p>
-                      <p class="quiz__question-answer quiz__question-answer--has-image"><i style="background-image: url(../img/quiz-item-pic-1.jpg)"></i> <b>Уже ставил коронку/коронки, хочу заменить</b> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, tenetur.</span></p>
-                      <p class="quiz__question-answer quiz__question-answer--has-image"><i style="background-image: url(../img/quiz-item-pic-1.jpg)"></i> <b>Сейчас съёмный протез, хочется коронки</b> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, nam.</span></p>
-                      <p class="quiz__question-answer quiz__question-answer--has-image"><i style="background-image: url(../img/quiz-item-pic-1.jpg)"></i> <b>Есть имплант, нужна коронка</b> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, eum!</span></p>
-                      <p class="quiz__question-answer quiz__question-answer--has-image" data-cancel-answers><i style="background-image: url(../img/quiz-item-pic-1.jpg)"></i> <b>Другое</b> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, itaque.</span></p>
-                    </div>
-                    <p class="quiz__question-error">Пожалуйста, выберите один из вариантов</p>
-                    <button class="quiz__next quiz__btn js-next">Далее</button>
-                  </div>
+                  <div class="quiz__questionsList"></div>
+                  <p class="quiz__question-error">Пожалуйста, выберите один из вариантов</p>
+                  <button class="quiz__next quiz__btn js-next">Далее</button>
                 </div>
                 <div class="quiz__form" style="display:none">
                   <p class="quiz__form-title">Почти готово! Расчет уже готовят наши врачи. <br>Впишите свой телефон, на который направить его.</p>

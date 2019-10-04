@@ -8,6 +8,7 @@ html
 		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
 		link(rel='shortcut icon', href='img/favicon.ico', type='image/x-icon')
 		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900")
+		link(rel='stylesheet', href='css/animate.min.css')
 		link(rel='stylesheet', href='css/style.css')
 		script(src="https://kit.fontawesome.com/1f70c8680e.js", crossorigin="anonymous")
 		style.
@@ -29,10 +30,11 @@ html
 									sapn.quiz__progress-bar.js-progress-bar #[span.js-progress-count 25]%
 								button.quiz__back
 								button.quiz__close
-								svg.loader
-									circle.loader__circle1(r='48%', cx='50%', cy='50%')
-									circle.loader__circle2(r='40%', cx='50%', cy='50%')
-									circle.loader__circle3(r='32%', cx='50%', cy='50%')
+								.quiz__loader
+									svg.loader
+										circle.loader__circle1(r='48%', cx='50%', cy='50%')
+										circle.loader__circle2(r='40%', cx='50%', cy='50%')
+										circle.loader__circle3(r='32%', cx='50%', cy='50%')
 								p.quiz__reason #[b Расчет цены] #[span Пройдите короткий тест  и рассчитайте#[br] стоимость лечения] #[i Пройдите тест и узнайте цену]
 								.quiz__main
 									.quiz__head
@@ -49,7 +51,7 @@ html
 										p.quiz__counter Сегодня тестов пройдено: 27
 									.quiz__list
 										p.quiz__choiseText #[b Выберите услугу], на которую хотите рассчитать стоимость
-										button.quiz__item
+										button.quiz__item(data-settings='{"name":"Имплантация","data":{"poster":"poster","icon":"icon","questions":[{"caption":"Какая у Вас ситуация?","multi":true,"cost":2,"answers":[{"value":"Есть отсутствующий зуб/зубы","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, itaque.","image":"","reset":false},{"value":"Зуб расшатывается (приобрел подвижность)","description":"Lorem ipsum dolor sit am itaque.","image":"","reset":false},{"value":"Уже ставил коронку/коронки, хочу заменить","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, itaque.","image":"","reset":false},{"value":"Сейчас съёмный протез, хочется коронки","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, itaque.","image":"","reset":false},{"value":"Есть имплант, нужна коронка","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, itaque.","image":"","reset":false},{"value":"Другое","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, itaque.","image":"","reset":false}]},{"caption":"Какаяf у Вас ситуация?","multi":true,"cost":2,"answers":[{"value":"Есть отсутствующий зуб/зубы","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, itaque.","image":"","reset":false},{"value":"Зуб расшатывается (приобрел подвижность)","description":"Lorem ipsum dolor sit am itaque.","image":"","reset":false},{"value":"Уже ставил коронку/коронки, хочу заменить","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, itaque.","image":"","reset":false},{"value":"Сейчас съёмный протез, хочется коронки","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, itaque.","image":"../img/quiz-item-pic-1.jpg","reset":false},{"value":"Есть имплант, нужна коронка","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, itaque.","image":"../img/quiz-item-pic-1.jpg","reset":false},{"value":"Другое","description":"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, itaque.","image":"","reset":true}]}]}}')
 											i(style="background-image: url(img/quiz-item-pic-1.jpg)")
 											span(style="background-image: url(img/quiz-item-icon-1.png)") Имплантация
 										button.quiz__item
@@ -74,17 +76,9 @@ html
 											i(style="background-image: url(img/quiz-item-pic-1.jpg)")
 											span(style="background-image: url(img/quiz-item-icon-1.png)") Имплантация
 								.quiz__questions(style="display:none")
-									.quiz__question.error
-										p.quiz__question-caption #[b Какая у Вас ситуация?]
-										.quiz__question-answers
-											p.quiz__question-answer.quiz__question-answer--has-image #[i(style="background-image: url(../img/quiz-item-pic-1.jpg)")] #[b Есть отсутствующий зуб/зубы] #[span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, suscipit!]
-											p.quiz__question-answer.quiz__question-answer--has-image #[i(style="background-image: url(../img/quiz-item-pic-1.jpg)")] #[b Зуб расшатывается (приобрел подвижность)] #[span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, sint.]
-											p.quiz__question-answer.quiz__question-answer--has-image #[i(style="background-image: url(../img/quiz-item-pic-1.jpg)")] #[b Уже ставил коронку/коронки, хочу заменить] #[span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, tenetur.]
-											p.quiz__question-answer.quiz__question-answer--has-image #[i(style="background-image: url(../img/quiz-item-pic-1.jpg)")] #[b Сейчас съёмный протез, хочется коронки] #[span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, nam.]
-											p.quiz__question-answer.quiz__question-answer--has-image #[i(style="background-image: url(../img/quiz-item-pic-1.jpg)")] #[b Есть имплант, нужна коронка] #[span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, eum!]
-											p.quiz__question-answer.quiz__question-answer--has-image(data-cancel-answers) #[i(style="background-image: url(../img/quiz-item-pic-1.jpg)")] #[b Другое] #[span Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, itaque.]
-										p.quiz__question-error Пожалуйста, выберите один из вариантов
-										button.quiz__next.quiz__btn.js-next Далее
+									.quiz__questionsList
+									p.quiz__question-error Пожалуйста, выберите один из вариантов
+									button.quiz__next.quiz__btn.js-next Далее
 								.quiz__form(style="display:none")
 									p.quiz__form-title Почти готово! Расчет уже готовят наши врачи. #[br]Впишите свой телефон, на который направить его.
 									.quiz__form-inner
