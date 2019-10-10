@@ -46,6 +46,12 @@ var Quiz = function() {
                 _t.quiz.removeClass('loading');
             })
         });
+
+        $('body').on('click', '.quiz__question-answer', function(event) {
+            event.preventDefault();
+            $(this).addClass('selected');
+            if(!_t.actriveQuestion.multi) $(this).siblings().removeClass('selected')
+        });
     })()
     this.open = function() {
         _t.quiz.fadeIn(400, function() {
@@ -69,6 +75,9 @@ var Quiz = function() {
                 var questionEl = _makeQuestion(question, i);
                 _t.qustionList.append(questionEl);
             })
+
+            _t['actriveQuestion'] = JSON.parse($('.quiz__question.active').attr('data-settings'))
+            
             setTimeout(function() {
                 cb();
             }, 1000)
@@ -81,15 +90,14 @@ var Quiz = function() {
         var caption = question.caption,
             answersArr = question.answers;
 
-        _t['quizMulti'] = question.multi;
-
         var captionEl = $('<p>').addClass('quiz__question-caption').html(caption),
             questionEl = $('<div>').addClass('quiz__question');
 
         questionEl.append(captionEl);
         questionEl.append(_makeAnswers(answersArr));
+        questionEl.attr("data-settings", JSON.stringify(question));
 
-        i === 0 && questionEl.addClass('active')
+        if(i === 0) questionEl.addClass('active')
 
         return questionEl;
     }
